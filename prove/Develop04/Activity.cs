@@ -1,51 +1,50 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
 
-// Clase base para las actividades
-class Activity
+abstract class Activity
 {
-    protected int duration; // Duración de la actividad en segundos
+    protected string _name;
+    protected string _description;
+    protected int _activityCount;
 
-    // Constructor
-    public Activity()
+    public abstract void Run();
+
+    protected int GetDuration()
     {
-        duration = 0;
+        Console.Write("Enter the duration in seconds: ");
+        int duration = Convert.ToInt32(Console.ReadLine());
+        return duration;
     }
 
-    // Método para establecer la duración de la actividad
-    protected void SetDuration()
+    protected void DisplayStartingMessage()
     {
-        Console.Write("Enter the duration of the activity in seconds: ");
-        duration = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Welcome to the {_name} Activity.");
+        Console.WriteLine(_description);
     }
 
-    // Método para mostrar el mensaje de inicio de la actividad
-    protected void ShowStartingMessage(string activityName, string description)
+    protected void DisplayEndingMessage(int duration)
     {
-        Console.WriteLine("Activity: " + activityName);
-        Console.WriteLine(description);
-        Console.WriteLine("Prepare to begin...");
-        Thread.Sleep(3000); // Pausa de 3 segundos
+        Console.WriteLine("\nGreat job! You have completed the activity.");
+        Console.WriteLine($"You spent {duration} seconds on the {_name} Activity.");
+        Console.WriteLine("Take a moment to reflect and relax.");
+        Thread.Sleep(3000);
     }
 
-    // Método para mostrar el mensaje de fin de la actividad
-    protected void ShowEndingMessage(string activityName)
+    protected virtual void PerformActivity()
     {
-        Console.WriteLine("Good job! You have completed the " + activityName + ".");
-        Thread.Sleep(3000); // Pausa de 3 segundos
-        Console.WriteLine("You have completed the " + activityName + " for " + duration + " seconds.");
-        Thread.Sleep(3000); // Pausa de 3 segundos
-    }
+        Console.WriteLine("\nGet ready...");
+        Thread.Sleep(2000);
 
-    // Método para mostrar una animación de pausa
-    protected void ShowPauseAnimation()
-    {
-        for (int i = 0; i < 3; i++)
+        Console.Write("/");
+        for (int i = 0; i < 4; i++)
         {
-            Console.Write("/");
-            Thread.Sleep(1000); // Pausa de 1 segundo
+            Thread.Sleep(250);
+            Console.Write("\b\\");
+            Thread.Sleep(250);
+            Console.Write("\b/");
+            Thread.Sleep(250);
+            Console.Write("\b ");
         }
-        Console.WriteLine();
+        Console.WriteLine(" ");
     }
 }

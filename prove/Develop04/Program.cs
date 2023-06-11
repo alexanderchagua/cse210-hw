@@ -1,47 +1,56 @@
 using System;
-using System.Collections.Generic;
 using System.Threading;
+
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Welcome to the Activities Program!");
+        Console.WriteLine("Welcome to the Self-Care App!");
 
         while (true)
         {
-            Console.WriteLine("\nChoose an activity:");
+            Console.WriteLine("\nPlease select an activity to start:");
             Console.WriteLine("1. Breathing Activity");
-            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("2. Reflecting Activity");
             Console.WriteLine("3. Listing Activity");
             Console.WriteLine("4. Exit");
 
             Console.Write("Enter your choice (1-4): ");
-            int choice = Convert.ToInt32(Console.ReadLine());
+            string choice = Console.ReadLine();
 
-            if (choice == 1)
+            Console.WriteLine();
+
+            Activity activity;
+
+            switch (choice)
             {
-                BreathingActivity breathingActivity = new BreathingActivity();
-                breathingActivity.PerformActivity();
+                case "1":
+                    activity = new BreathingActivity();
+                    break;
+                case "2":
+                    activity = new ReflectionActivity();
+                    break;
+                case "3":
+                    activity = new ListingActivity();
+                    break;
+                case "4":
+                    Console.WriteLine("Thank you for using the Self-Care App. Goodbye!");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    continue;
             }
-            else if (choice == 2)
+
+            activity.Run();
+
+            Console.WriteLine("\nWould you like to continue using the Self-Care App? (Y/N): ");
+            string continueChoice = Console.ReadLine();
+
+            if (continueChoice.Equals("N", StringComparison.OrdinalIgnoreCase))
             {
-                ReflectionActivity reflectionActivity = new ReflectionActivity();
-                reflectionActivity.PerformActivity();
-            }
-            else if (choice == 3)
-            {
-                ListingActivity listingActivity = new ListingActivity();
-                listingActivity.PerformActivity();
-            }
-            else if (choice == 4)
-            {
-                Console.WriteLine("Thank you for using the Activities Program. Goodbye!");
+                Console.WriteLine("Thank you for using the Self-Care App. Goodbye!");
                 break;
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice. Please enter a number between 1 and 4.");
             }
         }
     }
