@@ -1,0 +1,2 @@
+checklist goal:casa,casasa 10 minutos,100,3,3
+checklist goal:bebe,bebe juagando,100,0,1

@@ -1,0 +1,3 @@
+casa,100
+casas,2000
+betas,100

@@ -1,0 +1,3 @@
+casa,0,mis casa es tu casa
+beta ,0,beta es mi amiga
+lister,0,lister sol lister

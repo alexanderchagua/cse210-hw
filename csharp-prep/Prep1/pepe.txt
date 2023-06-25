@@ -1,0 +1,3 @@
+eternal goal:casa,por casa 3 minuts,100
+simple goal:casa,por algun dia,100
+checklist goal:pepe,pepe sabe dos,200,5,1
