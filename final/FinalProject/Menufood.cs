@@ -9,5 +9,3 @@ class MenuFood : Food
         Console.WriteLine(GetName() + " - $" + GetPrice());
     }
 }
-
-

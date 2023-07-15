@@ -1,0 +1,5 @@
+1. Aji de Gallina,10
+2. Lomo Saltado,30
+3. Ceviche,40
+2. Lomo Saltado,30
+Total Amount: $110

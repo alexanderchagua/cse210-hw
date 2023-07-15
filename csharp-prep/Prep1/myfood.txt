@@ -1,0 +1,7 @@
+2. Lomo Saltado,30
+3. Ceviche,40
+4. Chaufa de Pollo,60
+2. Queso,20
+3. Platano Frito,20
+arroz con pollo,20
+Total Amount: $190
