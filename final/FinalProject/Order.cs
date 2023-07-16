@@ -109,7 +109,7 @@ class Order
             {
                 double change = amountPaid - discountedAmount;
                 Console.WriteLine("Your change is $" + change);
-                
+                Console.WriteLine("Thank you for your purchase!");
                 _paymentCount++;
                 CheckBonusEligibility();
                 return true;

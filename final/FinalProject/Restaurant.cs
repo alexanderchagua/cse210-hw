@@ -245,7 +245,7 @@ class Restaurant
 
         if (_payment.ProcessPayment(_paymentMethod))
         {
-            Console.WriteLine("Thank you for your purchase!");
+           
 
             // Reset the order and payment method
             _currentOrder.ResetOrder();
